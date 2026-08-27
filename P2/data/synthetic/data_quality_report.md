@@ -23,3 +23,16 @@
 * Distinct Train-Val Session Overlap: 0
 * Distinct Train-Test Session Overlap: 0
 * Distinct Val-Test Session Overlap: 0
+
+## 5. Feature-Label Correlation Audit (Day 3 QA)
+* **Shortcut Learning Check:** PASS (All individual feature correlations $|\rho| < 0.85$)
+* **Top Contributing Signals:**
+  * `gaze_deviation`: $r = 0.7790$
+  * `idle_fraction`: $r = 0.7185$
+  * `head_yaw`: $r = 0.7177$
+  * `saccade_velocity_mean`: $r = 0.6954$
+  * `suspicious_objects_count`: $r = 0.6699$
+* **Non-Separable Single Cues:**
+  * `phone_detected`: $r = 0.4145$ (requires multimodal context)
+  * `tab_switch_count`: $r = 0.4041$
+  * `click_frequency`: $r = 0.0338$
