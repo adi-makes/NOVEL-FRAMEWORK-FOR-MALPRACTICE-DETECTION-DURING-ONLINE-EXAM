@@ -1,4 +1,4 @@
-# Synthetic Dataset Quality Report (Day 2 Deliverable)
+# Synthetic Dataset Quality Report (Day 3 Update)
 
 ## 1. Summary Statistics
 * **Total Sessions:** 200
@@ -24,15 +24,18 @@
 * Distinct Train-Test Session Overlap: 0
 * Distinct Val-Test Session Overlap: 0
 
-## 5. Feature-Label Correlation Audit (Day 3 QA)
-* **Shortcut Learning Check:** PASS (All individual feature correlations $|\rho| < 0.85$)
+
+## 5. Post-Hard-Negative Feature Correlation Audit (Day 3 Complete)
+* **Shortcut Learning Check:** PASS (All $|\rho| < 0.85$)
 * **Top Contributing Signals:**
-  * `gaze_deviation`: $r = 0.7790$
-  * `idle_fraction`: $r = 0.7185$
-  * `head_yaw`: $r = 0.7177$
-  * `saccade_velocity_mean`: $r = 0.6954$
-  * `suspicious_objects_count`: $r = 0.6699$
-* **Non-Separable Single Cues:**
-  * `phone_detected`: $r = 0.4145$ (requires multimodal context)
-  * `tab_switch_count`: $r = 0.4041$
-  * `click_frequency`: $r = 0.0338$
+  * `gaze_deviation`: $r = 0.7836$
+  * `head_yaw`: $r = 0.7217$
+  * `saccade_velocity_mean`: $r = 0.7081$
+  * `fixation_duration_mean`: $r = 0.6486$
+  * `suspicious_objects_count`: $r = 0.5006$
+* **Non-Separable Features (Requires Multimodal Fusion):**
+  * `idle_fraction`: $r = 0.4402$
+  * `tab_switch_count`: $r = 0.4031$
+  * `phone_confidence`: $r = 0.3243$
+  * `notes_detected`: $r = 0.2558$
+  * `phone_detected`: $r = 0.1731$

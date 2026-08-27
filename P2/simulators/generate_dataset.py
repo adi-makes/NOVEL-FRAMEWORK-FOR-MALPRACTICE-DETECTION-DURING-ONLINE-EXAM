@@ -2,16 +2,23 @@ import os
 import json
 import pandas as pd
 import numpy as np
-from simulators.exam_simulator import ExamSimulator
 
-def generate_primary_dataset(output_dir="data/synthetic", seed=42):
-    """Generates the primary 200-session dataset for Day 2 with audit reporting."""
+# Use relative import so it works seamlessly inside the P2 package
+from .exam_simulator import ExamSimulator
+
+def generate_day2_production_dataset(output_dir=None, seed=42):
     np.random.seed(seed)
+    
+    # Dynamically resolve data directory relative to this file
+    if output_dir is None:
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        output_dir = os.path.join(base_dir, "data", "synthetic")
+
     os.makedirs(output_dir, exist_ok=True)
     simulator = ExamSimulator()
     all_data = []
 
-    # Exactly 200 sessions: 100 Honest, 25 Phone, 25 Notes, 25 Copy/Paste, 25 External Assistance
+    # Target 200 sessions
     distribution = (
         ["none"] * 100 +
         ["phone"] * 25 +
@@ -27,7 +34,7 @@ def generate_primary_dataset(output_dir="data/synthetic", seed=42):
 
     df = pd.DataFrame(all_data)
 
-    # Leakage-free session split (60% Train / 20% Val / 20% Test)
+    # Leakage-free session split (60% / 20% / 20%)
     session_ids = list(df["session_id"].unique())
     np.random.shuffle(session_ids)
 
@@ -68,7 +75,7 @@ def generate_primary_dataset(output_dir="data/synthetic", seed=42):
         json.dump(metadata, f, indent=2)
 
     # 3. Export data_quality_report.md
-    report_md = f"""# Synthetic Dataset Quality Report (Day 2 Deliverable)
+    report_md = f"""# Synthetic Dataset Quality Report (Day 3 Update)
 
 ## 1. Summary Statistics
 * **Total Sessions:** {len(session_ids)}
@@ -98,9 +105,9 @@ def generate_primary_dataset(output_dir="data/synthetic", seed=42):
         f.write(report_md)
 
     print(f"Generated 200 sessions ({len(df)} windows) across all modalities.")
-    print(f"Artifacts successfully written to '{output_dir}/'.")
+    print(f"Artifacts successfully written to '{output_dir}'.")
     print("\nClass distribution by split:")
     print(df.groupby(["split", "label"]).size())
 
 if __name__ == "__main__":
-    generate_primary_dataset()
+    generate_day2_production_dataset()

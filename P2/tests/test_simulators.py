@@ -1,10 +1,9 @@
 import os
-import json
 import pandas as pd
-from simulators.gaze_simulator import GazeSimulator
-from simulators.mouse_simulator import MouseSimulator
-from simulators.environment_simulator import EnvironmentSimulator
-from simulators.exam_simulator import ExamSimulator
+from ..simulators.gaze_simulator import GazeSimulator
+from ..simulators.mouse_simulator import MouseSimulator
+from ..simulators.environment_simulator import EnvironmentSimulator
+from ..simulators.exam_simulator import ExamSimulator
 
 def test_gaze_simulator():
     gaze = GazeSimulator()
@@ -41,9 +40,10 @@ def test_exam_simulator():
     assert "label" in session[0]
 
 def test_primary_dataset_integrity():
-    csv_path = "data/synthetic/dataset.csv"
-    meta_path = "data/synthetic/metadata.json"
-    report_path = "data/synthetic/data_quality_report.md"
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    csv_path = os.path.join(base_dir, "data", "synthetic", "dataset.csv")
+    meta_path = os.path.join(base_dir, "data", "synthetic", "metadata.json")
+    report_path = os.path.join(base_dir, "data", "synthetic", "data_quality_report.md")
     
     assert os.path.exists(csv_path), "dataset.csv missing!"
     assert os.path.exists(meta_path), "metadata.json missing!"
@@ -54,7 +54,7 @@ def test_primary_dataset_integrity():
     assert df.isnull().sum().sum() == 0, "Found NaNs in dataset"
     assert set(df["split"].unique()) == {"train", "val", "test"}
     
-    # Check session-level leakage
+    # Check session-level zero leakage
     train_sessions = set(df[df["split"] == "train"]["session_id"])
     val_sessions = set(df[df["split"] == "val"]["session_id"])
     test_sessions = set(df[df["split"] == "test"]["session_id"])
@@ -69,4 +69,6 @@ if __name__ == "__main__":
     test_environment_simulator()
     test_exam_simulator()
     test_primary_dataset_integrity()
-    print("ALL DAY 2 TESTS PASSED PERFECTLY!")
+    print("\n-----------------------------------------")
+    print(">>> ALL DAY 3 INTEGRITY TESTS PASSED! <<<")
+    print("-----------------------------------------\n")
