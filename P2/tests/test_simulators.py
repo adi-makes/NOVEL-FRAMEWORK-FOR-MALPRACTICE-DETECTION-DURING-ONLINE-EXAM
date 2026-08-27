@@ -63,12 +63,30 @@ def test_primary_dataset_integrity():
     assert len(train_sessions.intersection(test_sessions)) == 0, "Leakage between train and test"
     assert len(val_sessions.intersection(test_sessions)) == 0, "Leakage between val and test"
 
+def test_stress_test_suites():
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    stress_dir = os.path.join(base_dir, "data", "stress_tests")
+    expected_files = [
+        "test_a_noisy_gaze.csv",
+        "test_b_mouse_noise.csv",
+        "test_c_environment_failure.csv",
+        "test_d_single_modality.csv",
+        "test_e_silent_cheating.csv"
+    ]
+    for fname in expected_files:
+        fpath = os.path.join(stress_dir, fname)
+        assert os.path.exists(fpath), f"Missing stress dataset: {fname}"
+        df = pd.read_csv(fpath)
+        assert len(df) == 720, f"Expected 720 rows in {fname}, found {len(df)}"
+        assert df.isnull().sum().sum() == 0, f"Found NaNs in {fname}"
+
 if __name__ == "__main__":
     test_gaze_simulator()
     test_mouse_simulator()
     test_environment_simulator()
     test_exam_simulator()
     test_primary_dataset_integrity()
+    test_stress_test_suites()
     print("\n-----------------------------------------")
-    print(">>> ALL DAY 3 INTEGRITY TESTS PASSED! <<<")
+    print(">>> ALL DAY 4 INTEGRITY TESTS PASSED! <<<")
     print("-----------------------------------------\n")
