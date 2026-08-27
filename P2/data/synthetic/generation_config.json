@@ -1,0 +1,31 @@
+{
+  "dataset_version": "1.0",
+  "status": "frozen",
+  "random_seed": 42,
+  "sampling_rate_hz": {
+    "gaze": 30,
+    "mouse": 50,
+    "environment": 10
+  },
+  "window_duration_seconds": 10,
+  "session_duration_windows": 18,
+  "session_count_by_scenario": {
+    "honest": 100,
+    "phone": 25,
+    "notes": 25,
+    "copy_paste": 25,
+    "external_assistance": 25
+  },
+  "split_ratio": {
+    "train": 0.60,
+    "val": 0.20,
+    "test": 0.20
+  },
+  "split_level": "session_id",
+  "hard_negatives": {
+    "phone_lookalike_probability": 0.07,
+    "scratch_paper_probability": 0.05,
+    "benign_tab_switch_probability": 0.04,
+    "thinking_pause_probability": 0.12
+  }
+}
