@@ -1,43 +1,29 @@
-# ============================================================
 # Core numerical/data processing
-# ============================================================
 numpy
 pandas
 scipy
 
-# ============================================================
-# Machine learning / evaluation
-# ============================================================
+# Machine learning and evaluation
 scikit-learn
 joblib
 
-# ============================================================
 # Deep learning
-# ============================================================
-torch
-torchvision
+torch==2.12.1
+torchvision==0.27.1
 
-# ============================================================
-# Computer vision / gaze / environment detection
-# ============================================================
+# Computer vision
 mediapipe
 opencv-python
 ultralytics
 
-# ============================================================
-# Configuration / utilities
-# ============================================================
+# Configuration and utilities
 PyYAML
 tqdm
 
-# ============================================================
-# Experiment analysis / visualization
-# ============================================================
+# Visualization and experiment analysis
 matplotlib
 seaborn
 
-# ============================================================
 # Testing
-# ============================================================
 pytest
 pytest-cov

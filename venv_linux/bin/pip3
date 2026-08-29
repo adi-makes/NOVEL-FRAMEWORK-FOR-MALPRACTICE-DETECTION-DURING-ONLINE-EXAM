@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/media/adi/New Volume1/CUSAT Academics/Research Paper/NOVEL-FRAMEWORK-FOR-MALPRACTICE-DETECTION-DURING-ONLINE-EXAM/venv_linux/bin/python3.10" "$0" "$@"
+'''exec' "/media/adi/New Volume1/CUSAT Academics/Research Paper/NOVEL-FRAMEWORK-FOR-MALPRACTICE-DETECTION-DURING-ONLINE-EXAM/venv_linux/bin/python" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
