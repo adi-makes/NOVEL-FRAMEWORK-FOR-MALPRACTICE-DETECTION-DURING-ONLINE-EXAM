@@ -1,9 +1,0 @@
-opencv-python
-numpy
-mediapipe==0.10.14
-ultralytics
-torch
-torchvision
-pyyaml
-psutil
-requests

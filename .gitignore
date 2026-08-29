@@ -1,9 +1,63 @@
-venv/
+# .gitignore
+
+# Python Cache & Artifacts
 __pycache__/
-*.pyc
-*.pt
-__pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Coverage
 .pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.tox/
+.nox/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Junk
 .DS_Store
-*.log
+Thumbs.db
+
+# Checkpoints & Results
+checkpoints/*.pt
+checkpoints/*.pth
+results/predictions/*
+!results/predictions/.gitkeep
+results/metrics/*
+!results/metrics/.gitkeep
+results/explanations/*
+!results/explanations/.gitkeep
+wandb/
+
+# Local Model Weights (optional ignore if downloaded dynamically)
+models/pretrained/environment/yolov8n.pt
+yolov8n.pt

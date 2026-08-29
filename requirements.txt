@@ -1,3 +1,10 @@
-pandas
 numpy
+pandas
+scipy
+scikit-learn
+torch
+mediapipe
+opencv-python
+ultralytics
+pyyaml
 pytest
