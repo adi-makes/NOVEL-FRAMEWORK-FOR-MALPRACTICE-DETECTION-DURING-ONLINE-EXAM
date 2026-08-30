@@ -84,9 +84,11 @@ figures/*.png
 wandb/
 *.ckpt
 
-# Claude Code (worktrees, sessions)
+# Claude Code (worktrees, sessions, local settings with secrets)
 .claude/worktrees/
 .claude/sessions/
+.claude/settings.local.json
+!.claude/settings.local.json.template
 
 # Notebooks (outputs)
 notebooks/.ipynb_checkpoints/
