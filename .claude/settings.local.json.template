@@ -1,0 +1,19 @@
+{
+  "_comment": "Local Claude Code settings. Copy to .claude/settings.local.json and fill in API keys. NEVER commit settings.local.json — it is in .gitignore.",
+
+  "env": {
+    "ANTHROPIC_API_KEY": "",
+    "OPENAI_API_KEY": "",
+    "WANDB_API_KEY": "",
+    "HUGGINGFACE_API_KEY": ""
+  },
+
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m pytest tests/*)",
+      "Bash(pip install -e .)",
+      "Bash(pip install -r requirements.txt)"
+    ],
+    "deny": []
+  }
+}

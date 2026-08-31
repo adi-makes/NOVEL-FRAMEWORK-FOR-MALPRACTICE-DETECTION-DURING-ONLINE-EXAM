@@ -1,0 +1,95 @@
+# .gitignore
+
+# Python Cache & Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.tox/
+.nox/
+.ruff_cache/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+venv_linux/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# OS Junk
+.DS_Store
+Thumbs.db
+*.log
+
+# Generated Data (synthetic dataset, stress tests)
+data/synthetic/*.csv
+data/synthetic/*.json
+data/synthetic/data_quality_report.md
+data/synthetic/feature_description.md
+data/stress_tests/*.csv
+
+# Checkpoints & Artifacts
+checkpoints/*.pt
+checkpoints/*.pth
+checkpoints/scaler.joblib
+
+# Generated Results
+results/predictions/*.csv
+!results/predictions/.gitkeep
+results/stress_tests/stress_results.csv
+!results/stress_tests/.gitkeep
+results/stress_tests/*.json
+!results/stress_tests/*.json
+results/metrics/*
+!results/metrics/.gitkeep
+results/explanations/*
+!results/explanations/.gitkeep
+
+# Generated Figures
+figures/*.png
+!figures/.gitkeep
+
+# Weights & Logs
+wandb/
+*.ckpt
+
+# Claude Code (worktrees, sessions, local settings with secrets)
+.claude/worktrees/
+.claude/sessions/
+.claude/settings.local.json
+!.claude/settings.local.json.template
+
+# Notebooks (outputs)
+notebooks/.ipynb_checkpoints/
+notebooks/*/.ipynb_checkpoints/

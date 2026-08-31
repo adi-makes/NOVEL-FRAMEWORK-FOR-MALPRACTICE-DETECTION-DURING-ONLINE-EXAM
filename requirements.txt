@@ -1,0 +1,29 @@
+# Core numerical/data processing
+numpy
+pandas
+scipy
+
+# Machine learning and evaluation
+scikit-learn
+joblib
+
+# Deep learning
+torch==2.12.1
+torchvision==0.27.1
+
+# Computer vision
+mediapipe
+opencv-python
+ultralytics
+
+# Configuration and utilities
+PyYAML
+tqdm
+
+# Visualization and experiment analysis
+matplotlib
+seaborn
+
+# Testing
+pytest
+pytest-cov
