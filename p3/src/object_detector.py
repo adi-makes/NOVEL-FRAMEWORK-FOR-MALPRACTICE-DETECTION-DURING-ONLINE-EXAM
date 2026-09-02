@@ -4,7 +4,11 @@ import cv2
 import torch
 from ultralytics import YOLO
 
-# Exam environment relevant COCO classes
+# Exam environment relevant COCO classes.
+# This broad set drives the `is_relevant` flag on each detection.
+# Which of these are "suspicious" is determined downstream in
+# TemporalWindowAggregator (environment_features.py::SUSPICIOUS_CLASSES).
+# Keeping detection wide here avoids information loss before the feature stage.
 DEFAULT_RELEVANT_CLASSES = {
     "cell phone",
     "book",
@@ -33,9 +37,12 @@ class ObjectDetector:
         relevant_classes: set = None,
     ):
         self.confidence_threshold = confidence_threshold
-        self.relevant_classes = (
-            relevant_classes if relevant_classes is not None else DEFAULT_RELEVANT_CLASSES
-        )
+        self.relevant_classes = {
+            cls.lower()
+            for cls in (
+                relevant_classes if relevant_classes is not None else DEFAULT_RELEVANT_CLASSES
+            )
+        }
 
         # Detect GPU/CPU hardware
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -73,8 +80,8 @@ class ObjectDetector:
                         }, ...
                     ]
         """
-        start_time = time.time()
-        timestamp = time.time()
+        start_time = time.perf_counter()
+        timestamp = time.monotonic()
 
         if frame_bgr is None or frame_bgr.size == 0:
             return {
@@ -89,7 +96,7 @@ class ObjectDetector:
             frame_bgr, conf=self.confidence_threshold, device=self.device, verbose=False
         )
 
-        inference_time_ms = (time.time() - start_time) * 1000.0
+        inference_time_ms = (time.perf_counter() - start_time) * 1000.0
         detections = []
 
         if results and len(results) > 0:
@@ -103,7 +110,7 @@ class ObjectDetector:
                     xyxy = box.xyxy[0].cpu().numpy().tolist()
                     bbox = [int(val) for val in xyxy]
 
-                    is_relevant = cls_name.lower() in [c.lower() for c in self.relevant_classes]
+                    is_relevant = cls_name.lower() in self.relevant_classes
 
                     detections.append(
                         {
