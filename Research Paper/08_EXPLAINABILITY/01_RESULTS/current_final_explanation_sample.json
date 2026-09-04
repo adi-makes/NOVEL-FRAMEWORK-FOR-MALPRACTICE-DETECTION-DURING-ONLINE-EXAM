@@ -1,0 +1,11 @@
+{
+  "risk_score": 1.0,
+  "stream_evidence": {
+    "gaze": 0.0,
+    "interaction": 0.904,
+    "environment": 0.0809
+  },
+  "reasons": [
+    "Unusual cursor velocity spikes or rapid tab-switching observed"
+  ]
+}

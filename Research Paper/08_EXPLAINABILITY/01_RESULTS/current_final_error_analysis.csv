@@ -1,0 +1,11 @@
+model,session_id,window_id,label,probability,prediction,threshold
+attention_fusion,sess_0432,sess_0432_w0106,0,0.99990916,1,0.9299999999999999
+attention_fusion,sess_0537,sess_0537_w0009,0,0.9997534,1,0.9299999999999999
+attention_fusion,sess_0432,sess_0432_w0225,0,0.99924845,1,0.9299999999999999
+attention_fusion,sess_large_220,sess_large_220_w0102,0,0.9991855,1,0.9299999999999999
+attention_fusion,sess_large_005,sess_large_005_w0087,0,0.9976937,1,0.9299999999999999
+attention_fusion,sess_large_024,sess_large_024_w0073,1,0.0018987156,0,0.9299999999999999
+attention_fusion,sess_large_024,sess_large_024_w0083,1,0.0020231477,0,0.9299999999999999
+attention_fusion,sess_large_024,sess_large_024_w0134,1,0.002248869,0,0.9299999999999999
+attention_fusion,sess_large_024,sess_large_024_w0132,1,0.0023040727,0,0.9299999999999999
+attention_fusion,sess_large_024,sess_large_024_w0138,1,0.0024592527,0,0.9299999999999999

@@ -1,0 +1,20 @@
+{
+  "H1": {
+    "status": "SUPPORTED",
+    "attention_auc": 0.9838957254134898,
+    "single_stream_best_auc": 0.9397139261864439,
+    "difference": 0.044181799227045904
+  },
+  "H2": {
+    "status": "NOT SUPPORTED",
+    "attention_auc": 0.9838957254134898,
+    "fusion_best_auc": 0.9844660626659203,
+    "difference": -0.0005703372524304973
+  },
+  "H3": {
+    "status": "SUPPORTED",
+    "attention_auc": 0.9838957254134898,
+    "pairwise_best_auc": 0.9770536775104164,
+    "difference": 0.006842047903073412
+  }
+}

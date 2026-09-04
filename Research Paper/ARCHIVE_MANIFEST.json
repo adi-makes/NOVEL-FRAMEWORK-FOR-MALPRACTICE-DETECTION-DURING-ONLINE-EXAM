@@ -1,0 +1,45 @@
+{
+  "archive_created_at": "2026-09-04T16:29:23.847965",
+  "project_root": "/media/adi/New Volume1/CUSAT Academics/Research Paper/NOVEL-FRAMEWORK-FOR-MALPRACTICE-DETECTION-DURING-ONLINE-EXAM",
+  "archive_root": "/media/adi/New Volume1/CUSAT Academics/Research Paper/NOVEL-FRAMEWORK-FOR-MALPRACTICE-DETECTION-DURING-ONLINE-EXAM/Research Paper",
+  "source_git_commit": "ea95f5a0fb006bc09285f82e0de2905b9a7f826e",
+  "source_git_branch": "main",
+  "artifact_count": 210,
+  "tier_A_count": 101,
+  "tier_B_count": 53,
+  "tier_C_count": 56,
+  "tier_D_count": 0,
+  "excluded_count": 0,
+  "dataset_versions": [
+    "Dataset 1 (Initial Synthetic)",
+    "Dataset 2 (Large Scale Unbalanced)",
+    "Dataset 3 (Final Balanced)"
+  ],
+  "experiment_versions": [
+    "First Experiment (Exp1)",
+    "Current / Final Experiment (Exp2)"
+  ],
+  "model_versions": [
+    "gaze_only",
+    "interaction_only",
+    "environment_only",
+    "gaze_interaction",
+    "gaze_environment",
+    "interaction_environment",
+    "early_fusion",
+    "late_fusion",
+    "attention_fusion"
+  ],
+  "result_files": 70,
+  "figure_files": 19,
+  "table_files": 0,
+  "derived_files": 5,
+  "missing_information": [
+    "Real-world CCTV video recordings",
+    "Demographic metadata"
+  ],
+  "conflicts": [
+    "Exp1 vs Exp2 AUC differences due to dataset scaling and leakage fixes"
+  ],
+  "hash_algorithm": "SHA256"
+}

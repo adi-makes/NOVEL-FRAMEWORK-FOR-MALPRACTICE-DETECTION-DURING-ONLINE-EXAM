@@ -1,0 +1,7 @@
+sha256,canonical_path,duplicate_paths
+dc9df116432db9347eace95cb032b232a0cfed60044435df69962f0a7d4a0570,archive/legacy/Complete_Plan.md,docs/project/Complete_Plan.md
+95ec8fa50192a64d54a1407b9e29ee2d335b16eec78a61699d4237799d848de9,archive/legacy/ONE_WEEK_SPRINT_PLAN.md,docs/project/ONE_WEEK_SPRINT_PLAN.md
+1bf49329340c49e08ddda181da11faf787c6d52f7cda8721dda874649aa01baa,archive/legacy/Literature_Review_and_Novelty_Assessment.pdf,docs/research/Literature_Review_and_Novelty_Assessment.pdf
+69dbf7ea02fd912db8cd8b0e8c75a5611ff510dbc99b11c03ef5ae41d3e6d22d,archive/legacy/Research Paper - Execution Plan Split.pdf,docs/research/Research Paper - Execution Plan Split.pdf
+7a70286ce930f4796d88e06c74bf7c536678fe3f88de30901cac23e22f841a2b,results/final/main_results.csv,results/final/results.csv
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,simulators/__init__.py,src/exam_proctoring/__init__.py; src/exam_proctoring/data/__init__.py; src/exam_proctoring/environment/__init__.py; src/exam_proctoring/evaluation/__init__.py; src/exam_proctoring/explainability/__init__.py; src/exam_proctoring/gaze/__init__.py; src/exam_proctoring/interaction/__init__.py; src/exam_proctoring/training/__init__.py

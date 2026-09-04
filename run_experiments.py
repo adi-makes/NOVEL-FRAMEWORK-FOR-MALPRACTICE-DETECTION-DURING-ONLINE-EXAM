@@ -128,13 +128,13 @@ def main():
     print(f"Calculated Train pos_weight for BCEWithLogitsLoss: {pos_weight:.4f}")
 
     # Results & Checkpoint Directories
-    checkpoints_dir = project_root / "models" / "model_1_initial_dataset" / "checkpoints"
-    results_dir = project_root / "results" / "model_1_initial_dataset" / "run1"
-    metrics_dir = results_dir / "metrics"
+    checkpoints_dir = project_root / "models" / "final" / "checkpoints"
+    results_dir = project_root / "results" / "final"
+    metrics_dir = results_dir
     predictions_dir = results_dir / "predictions"
     stress_dir = results_dir / "stress_tests"
     explanations_dir = results_dir / "explanations"
-    figures_dir = project_root / "figures" / "model_1_initial_dataset" / "run1"
+    figures_dir = project_root / "figures" / "final"
 
     for d in [
         checkpoints_dir,
@@ -250,7 +250,13 @@ def main():
                     )
 
     test_results_df = pd.DataFrame(test_results_list)
+    test_results_df.to_csv(metrics_dir / "main_results.csv", index=False)
     test_results_df.to_csv(metrics_dir / "results.csv", index=False)
+
+    # Save ablation_results.csv (comparing full attention vs pairwise/ablated models)
+    ablation_keys = ["attention_fusion", "gaze_interaction", "gaze_environment", "interaction_environment"]
+    ablation_df = test_results_df[test_results_df["model_key"].isin(ablation_keys)].copy()
+    ablation_df.to_csv(metrics_dir / "ablation_results.csv", index=False)
 
     results_json_dict = {row["model_key"]: row for row in test_results_list}
     with open(metrics_dir / "results.json", "w") as f:

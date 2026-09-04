@@ -1,0 +1,42 @@
+{
+  "dataset_version": "3.0-balanced-final",
+  "dataset_path": "data/dataset_final_balanced/dataset.csv",
+  "random_seeds": {
+    "python": 42,
+    "numpy": 42,
+    "pytorch": 42
+  },
+  "model_configs": {
+    "hidden_dim": 128,
+    "num_heads": 4,
+    "dropout": 0.2,
+    "models_evaluated": [
+      "gaze_only",
+      "interaction_only",
+      "environment_only",
+      "gaze_interaction",
+      "gaze_environment",
+      "interaction_environment",
+      "early_fusion",
+      "late_fusion",
+      "attention_fusion"
+    ]
+  },
+  "preprocessing_version": "StandardScaler_fit_on_train_only",
+  "training_config": {
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 50,
+    "patience": 8,
+    "loss_fn": "BCEWithLogitsLoss"
+  },
+  "evaluation_config": {
+    "split_ratio": "60_20_20_participant_isolated",
+    "threshold_tuning": "val_max_f1"
+  },
+  "hardware": {
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "pytorch_version": "2.12.1+cu132"
+  }
+}

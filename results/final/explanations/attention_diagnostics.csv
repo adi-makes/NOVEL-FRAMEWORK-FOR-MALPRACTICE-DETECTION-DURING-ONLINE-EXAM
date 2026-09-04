@@ -1,0 +1,10 @@
+source_modality,target_modality,mean_attention_weight
+gaze,gaze,0.4426986575126648
+gaze,interaction,0.4034675061702728
+gaze,environment,0.15383340418338776
+interaction,gaze,0.27342507243156433
+interaction,interaction,0.5213708877563477
+interaction,environment,0.2052038460969925
+environment,gaze,0.3362441658973694
+environment,interaction,0.5192936062812805
+environment,environment,0.14446282386779785

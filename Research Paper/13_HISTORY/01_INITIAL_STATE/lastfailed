@@ -1,0 +1,6 @@
+{
+  "P2/tests/test_simulators.py": true,
+  "exam-proctoring/tests/test_attention_fusion.py": true,
+  "p3/tests/test_object_detection.py": true,
+  "tests/unit/test_object_detection.py": true
+}
