@@ -1,0 +1,96 @@
+{
+  "dataset_version": "3.1_stratified_temporal_benchmark",
+  "description": "Synthetic multimodal temporal benchmark for online exam malpractice detection research.",
+  "scientific_disclaimer": "This benchmark is generated synthetically to emulate realistic behavioral variance, benign anomalies, environmental noise, and cross-modal temporal asynchrony. It is designed for algorithmic benchmarking and not as empirical human data.",
+  "feature_whitelist": {
+    "model_training_features": [
+      "fixation_duration_mean",
+      "fixation_count",
+      "saccade_velocity_mean",
+      "gaze_deviation",
+      "gaze_confidence",
+      "head_yaw",
+      "head_pitch",
+      "cursor_velocity_mean",
+      "cursor_velocity_std",
+      "click_frequency",
+      "keystroke_frequency",
+      "idle_fraction",
+      "tab_switch_count",
+      "velocity_spike_ratio",
+      "phone_detected",
+      "phone_confidence",
+      "notes_detected",
+      "extra_person_count",
+      "suspicious_objects_count"
+    ],
+    "target_column": "label",
+    "metadata_columns_to_exclude_from_training": [
+      "participant_id",
+      "session_id",
+      "window_id",
+      "timestamp_start",
+      "timestamp_end",
+      "split",
+      "room_id",
+      "camera_config",
+      "hardware_config",
+      "screen_resolution",
+      "scenario_type",
+      "cheating_behavior",
+      "gaze_active",
+      "mouse_active",
+      "env_active",
+      "temporal_detection_phase",
+      "is_detectability_benchmark_sample"
+    ]
+  },
+  "total_participants": 125,
+  "total_sessions": 350,
+  "session_level_balance": {
+    "honest_sessions": 175,
+    "cheating_sessions": 175,
+    "honest_percentage": 50.0,
+    "cheating_percentage": 50.0
+  },
+  "window_level_balance": {
+    "total_windows": 94190,
+    "honest_windows": 81661,
+    "cheating_windows": 12529,
+    "honest_percentage": 86.69816328697314,
+    "cheating_percentage": 13.30183671302686,
+    "note": "Window-level distribution is naturally imbalanced because active malpractice occupies a continuous temporal sub-interval (40-100 windows) of each 30-60 minute exam session."
+  },
+  "splits_by_participant": {
+    "train_participants": 75,
+    "val_participants": 25,
+    "test_participants": 25
+  },
+  "splits_by_session": {
+    "train_sessions": 210,
+    "val_sessions": 70,
+    "test_sessions": 70
+  },
+  "scenario_distribution": {
+    "session_baseline": 81661,
+    "three_modality_fusion": 2213,
+    "two_modality_gaze_env": 1837,
+    "two_modality_gaze_mouse": 1807,
+    "silent_cheating": 1791,
+    "two_modality_mouse_env": 1683,
+    "single_modality_env": 1112,
+    "single_modality_gaze": 1047,
+    "single_modality_mouse": 1039
+  },
+  "temporal_detection_phases": {
+    "baseline": 81661,
+    "fully_observable": 10371,
+    "onset_latency": 1998,
+    "partially_observable": 160
+  },
+  "detectability_analysis": {
+    "silent_cheating_windows": 1791,
+    "split_allocation": "test_only",
+    "guideline": "Evaluate 'silent_cheating' separately to characterize the fundamental observability limit of the proposed multimodal system."
+  }
+}

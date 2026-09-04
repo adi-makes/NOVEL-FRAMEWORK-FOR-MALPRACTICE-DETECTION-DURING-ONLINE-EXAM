@@ -22,6 +22,7 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Testing & Coverage
 .pytest_cache/
@@ -30,34 +31,65 @@ htmlcov/
 .mypy_cache/
 .tox/
 .nox/
+.ruff_cache/
 
 # Virtual Environments
 .venv/
 venv/
 ENV/
 env/
+venv_linux/
 
 # IDE & Editor Settings
 .vscode/
 .idea/
 *.swp
 *.swo
+*.swn
 
 # OS Junk
 .DS_Store
 Thumbs.db
+*.log
 
-# Checkpoints & Results
+# Generated Data (synthetic dataset, stress tests)
+data/synthetic/*.csv
+data/synthetic/*.json
+data/synthetic/data_quality_report.md
+data/synthetic/feature_description.md
+data/stress_tests/*.csv
+
+# Checkpoints & Artifacts
 checkpoints/*.pt
 checkpoints/*.pth
-results/predictions/*
+checkpoints/scaler.joblib
+
+# Generated Results
+results/predictions/*.csv
 !results/predictions/.gitkeep
+results/stress_tests/stress_results.csv
+!results/stress_tests/.gitkeep
+results/stress_tests/*.json
+!results/stress_tests/*.json
 results/metrics/*
 !results/metrics/.gitkeep
 results/explanations/*
 !results/explanations/.gitkeep
-wandb/
 
-# Local Model Weights (optional ignore if downloaded dynamically)
-models/pretrained/environment/yolov8n.pt
-yolov8n.pt
+# Generated Figures
+figures/*.png
+!figures/.gitkeep
+
+# Weights & Logs
+wandb/
+*.ckpt
+
+# Claude Code (worktrees, sessions, local settings with secrets)
+.claude/worktrees/
+.claude/sessions/
+.claude/settings.local.json
+!.claude/settings.local.json.template
+
+# Notebooks (outputs)
+notebooks/.ipynb_checkpoints/
+notebooks/*/.ipynb_checkpoints/

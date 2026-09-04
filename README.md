@@ -91,10 +91,34 @@ pip install -e .
 # Verify installation
 python -c "import exam_proctoring; print('Import successful')"
 
+### Claude Code Setup (Optional)
+
+If you use Claude Code with this repo, copy the settings template and fill in any API keys you need:
+```bash
+cp .claude/settings.local.json.template .claude/settings.local.json
+# then edit .claude/settings.local.json and paste your keys
+```
+
+`settings.local.json` is in `.gitignore` and will **never** be committed. Any field you leave as `""` is simply ignored, so you can ship the template untouched if you don't need a given integration.
+
+#### Free-tier setup (no payment required)
+
+You can run Claude Code with zero paid keys. The defaults work out of the box on a free Anthropic account:
+
+1. **Skip the API keys entirely.** Open `.claude/settings.local.json` and leave every value in `"env"` as `""`. The template ships this way.
+2. **Sign in for free.** When you first launch `claude` in the terminal, choose **"Sign in with Anthropic"** and create a free account. Free accounts include enough usage for individual development on this repo.
+3. **Use the default model.** Don't set `ANTHROPIC_API_KEY` unless you want to bypass rate limits. Without an API key, Claude Code uses your login session and falls back to the free-tier model automatically.
+4. **Disable optional integrations.** Leave `WANDB_API_KEY`, `HUGGINGFACE_API_KEY`, and `OPENAI_API_KEY` blank — none of them are required for training or evaluation in this repo.
+5. **Optional — free W&B.** If you want experiment tracking, create a free W&B account at https://wandb.ai and paste the API key into `WANDB_API_KEY`. The free tier is sufficient for solo academic experiments.
+
+The repo runs end-to-end on a free Anthropic login + a free Hugging Face account (for any pretrained weights). No paid API access is required.
+
+### Running Tests
+
+```bash
 # Run the full test suite
 python3 -m pytest tests/ -v
 ```
-
 ### Development Dependencies
 
 The project uses:

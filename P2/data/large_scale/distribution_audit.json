@@ -1,0 +1,130 @@
+{
+  "room_by_split": {
+    "test": {
+      "room_00": 7,
+      "room_01": 3,
+      "room_02": 9,
+      "room_03": 8,
+      "room_04": 8,
+      "room_05": 8,
+      "room_06": 10,
+      "room_07": 5,
+      "room_08": 7,
+      "room_09": 5
+    },
+    "train": {
+      "room_00": 26,
+      "room_01": 19,
+      "room_02": 30,
+      "room_03": 14,
+      "room_04": 19,
+      "room_05": 17,
+      "room_06": 24,
+      "room_07": 16,
+      "room_08": 24,
+      "room_09": 21
+    },
+    "val": {
+      "room_00": 4,
+      "room_01": 4,
+      "room_02": 7,
+      "room_03": 7,
+      "room_04": 11,
+      "room_05": 7,
+      "room_06": 8,
+      "room_07": 8,
+      "room_08": 7,
+      "room_09": 7
+    }
+  },
+  "camera_by_split": {
+    "test": {
+      "cam_external_usb_wide": 25,
+      "cam_laptop_integrated": 16,
+      "cam_webcam_centered": 14,
+      "cam_webcam_left_offset": 15
+    },
+    "train": {
+      "cam_external_usb_wide": 52,
+      "cam_laptop_integrated": 46,
+      "cam_webcam_centered": 51,
+      "cam_webcam_left_offset": 61
+    },
+    "val": {
+      "cam_external_usb_wide": 12,
+      "cam_laptop_integrated": 15,
+      "cam_webcam_centered": 16,
+      "cam_webcam_left_offset": 27
+    }
+  },
+  "hardware_by_split": {
+    "test": {
+      "hw_budget_wireless_mouse": 12,
+      "hw_desktop_optical_mouse": 11,
+      "hw_gaming_high_dpi": 16,
+      "hw_laptop_trackpad": 8,
+      "hw_macbook_trackpad": 13,
+      "hw_ultrawide_dual_display": 10
+    },
+    "train": {
+      "hw_budget_wireless_mouse": 36,
+      "hw_desktop_optical_mouse": 36,
+      "hw_gaming_high_dpi": 33,
+      "hw_laptop_trackpad": 36,
+      "hw_macbook_trackpad": 33,
+      "hw_ultrawide_dual_display": 36
+    },
+    "val": {
+      "hw_budget_wireless_mouse": 7,
+      "hw_desktop_optical_mouse": 9,
+      "hw_gaming_high_dpi": 14,
+      "hw_laptop_trackpad": 14,
+      "hw_macbook_trackpad": 15,
+      "hw_ultrawide_dual_display": 11
+    }
+  },
+  "scenario_by_split": {
+    "test": {
+      "benign_environment_object": 6,
+      "benign_gaze_deviation": 7,
+      "benign_mouse_anomaly": 7,
+      "honest_baseline": 15,
+      "silent_cheating": 25,
+      "single_modality_env": 1,
+      "single_modality_gaze": 1,
+      "single_modality_mouse": 1,
+      "three_modality_fusion": 1,
+      "two_modality_gaze_env": 2,
+      "two_modality_gaze_mouse": 2,
+      "two_modality_mouse_env": 2
+    },
+    "train": {
+      "benign_environment_object": 18,
+      "benign_gaze_deviation": 21,
+      "benign_mouse_anomaly": 21,
+      "honest_baseline": 45,
+      "silent_cheating": 0,
+      "single_modality_env": 10,
+      "single_modality_gaze": 10,
+      "single_modality_mouse": 10,
+      "three_modality_fusion": 21,
+      "two_modality_gaze_env": 18,
+      "two_modality_gaze_mouse": 18,
+      "two_modality_mouse_env": 18
+    },
+    "val": {
+      "benign_environment_object": 6,
+      "benign_gaze_deviation": 7,
+      "benign_mouse_anomaly": 7,
+      "honest_baseline": 15,
+      "silent_cheating": 0,
+      "single_modality_env": 4,
+      "single_modality_gaze": 4,
+      "single_modality_mouse": 4,
+      "three_modality_fusion": 8,
+      "two_modality_gaze_env": 5,
+      "two_modality_gaze_mouse": 5,
+      "two_modality_mouse_env": 5
+    }
+  }
+}
