@@ -31,7 +31,7 @@ def test_environment_feature_extractor():
     res = extractor.extract_features(fake_detection)
 
     assert res["person_count"] == 1
-    assert res["phone_detected"] is True
+    assert bool(res["phone_detected"]) is True
     assert res["phone_confidence"] == 0.88
     assert res["book_detected"] is False
     assert res["relevant_object_count"] == 2

@@ -269,8 +269,12 @@ class TemporalWindowAggregator:
             "suspicious_objects_count": suspicious_objects_count,
             # --- Convenience alias ---
             "person_count_anomaly": person_count_anomaly,
-            # --- Diagnostic ---
+            # --- Diagnostic & Backward Compatibility ---
+            "person_count": stable_person_count,
             "raw_person_count": stable_person_count,
+            "book_detected": bool(notes_detected),
+            "relevant_object_count": stable_person_count + (1 if phone_detected else 0) + (1 if notes_detected else 0),
+            "temporal_stability": persistence_scores,
             "window_obs_count": n,
             "window_duration_seconds": round(window_duration, 2),
             "persistence_scores": persistence_scores,
@@ -373,7 +377,11 @@ class TemporalWindowAggregator:
             "extra_person_count": 0,
             "suspicious_objects_count": 0,
             "person_count_anomaly": 0,
+            "person_count": 0,
             "raw_person_count": 0,
+            "book_detected": False,
+            "relevant_object_count": 0,
+            "temporal_stability": {},
             "window_obs_count": 0,
             "window_duration_seconds": 0.0,
             "persistence_scores": {},
