@@ -6,6 +6,6 @@ patience: 8
 dropout: 0.2
 hidden_dim: 128
 num_heads: 4
-dataset_path: "data/synthetic/dataset.csv"
-scaler_path: "checkpoints/scaler.joblib"
+dataset_path: "data/dataset_1_initial/synthetic/dataset.csv"
+scaler_path: "models/model_1_initial_dataset/checkpoints/scaler.joblib"
 threshold_strategy: "f1_optimal"

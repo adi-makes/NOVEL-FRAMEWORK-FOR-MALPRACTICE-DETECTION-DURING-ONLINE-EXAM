@@ -61,11 +61,12 @@ def set_seed(seed=42):
 
 def train_model(
     model_name,
-    data_path="data/synthetic/dataset.csv",
+    data_path="data/dataset_1_initial/synthetic/dataset.csv",
     epochs=50,
     batch_size=32,
     patience=8,
     seed=42,
+    checkpoint_dir="models/model_1_initial_dataset/checkpoints",
 ):
 
     if model_name not in MODEL_REGISTRY:
@@ -123,7 +124,7 @@ def train_model(
     # --------------------------------------------------
 
     checkpoint_path = (
-        f"checkpoints/{model_name}.pt"
+        f"{checkpoint_dir}/{model_name}.pt"
     )
 
     history = trainer.fit(
@@ -155,7 +156,7 @@ def main():
 
     parser.add_argument(
         "--data",
-        default="data/synthetic/dataset.csv",
+        default="data/dataset_1_initial/synthetic/dataset.csv",
     )
 
     parser.add_argument(

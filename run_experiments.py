@@ -76,8 +76,8 @@ def main():
             "epochs": 50,
             "patience": 8,
             "dropout": 0.2,
-            "dataset_path": "data/synthetic/dataset.csv",
-            "scaler_path": "checkpoints/scaler.joblib",
+            "dataset_path": "data/dataset_1_initial/synthetic/dataset.csv",
+            "scaler_path": "models/model_1_initial_dataset/checkpoints/scaler.joblib",
         }
 
     seed = args.seed if args.seed is not None else config.get("seed", 42)
@@ -102,9 +102,9 @@ def main():
 
     # 1. Dataset & DataLoaders Verification
     dataset_path = project_root / config.get(
-        "dataset_path", "data/synthetic/dataset.csv"
+        "dataset_path", "data/dataset_1_initial/synthetic/dataset.csv"
     )
-    scaler_path = project_root / config.get("scaler_path", "checkpoints/scaler.joblib")
+    scaler_path = project_root / config.get("scaler_path", "models/model_1_initial_dataset/checkpoints/scaler.joblib")
 
     print("\n[1/6] Loading & Validating Canonical Dataset...")
     try:
@@ -128,13 +128,13 @@ def main():
     print(f"Calculated Train pos_weight for BCEWithLogitsLoss: {pos_weight:.4f}")
 
     # Results & Checkpoint Directories
-    checkpoints_dir = project_root / "checkpoints"
-    results_dir = project_root / "results"
+    checkpoints_dir = project_root / "models" / "model_1_initial_dataset" / "checkpoints"
+    results_dir = project_root / "results" / "model_1_initial_dataset" / "run1"
     metrics_dir = results_dir / "metrics"
     predictions_dir = results_dir / "predictions"
     stress_dir = results_dir / "stress_tests"
     explanations_dir = results_dir / "explanations"
-    figures_dir = project_root / "figures"
+    figures_dir = project_root / "figures" / "model_1_initial_dataset" / "run1"
 
     for d in [
         checkpoints_dir,

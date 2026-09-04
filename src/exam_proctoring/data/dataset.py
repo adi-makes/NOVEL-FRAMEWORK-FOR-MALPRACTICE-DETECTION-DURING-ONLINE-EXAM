@@ -121,9 +121,9 @@ def verify_dataset_integrity(df: pd.DataFrame) -> Dict[str, Any]:
 
 
 def create_dataloaders(
-    data_path: str = "data/synthetic/dataset.csv",
+    data_path: str = "data/dataset_1_initial/synthetic/dataset.csv",
     batch_size: int = 32,
-    scaler_path: str = "checkpoints/scaler.joblib",
+    scaler_path: str = "models/model_1_initial_dataset/checkpoints/scaler.joblib",
     fit_scaler: bool = True,
     scaler_to_use: StandardScaler = None,
 ) -> Tuple[DataLoader, DataLoader, DataLoader, StandardScaler, Dict[str, Any]]:
