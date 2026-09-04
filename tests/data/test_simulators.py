@@ -42,11 +42,12 @@ def test_exam_simulator():
 
 def test_primary_dataset_integrity():
     base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    csv_path = os.path.join(base_dir, "data", "synthetic", "dataset.csv")
-    meta_path = os.path.join(base_dir, "data", "synthetic", "metadata.json")
-    report_path = os.path.join(base_dir, "data", "synthetic", "data_quality_report.md")
-    config_path = os.path.join(base_dir, "data", "synthetic", "generation_config.json")
-    feature_desc_path = os.path.join(base_dir, "data", "synthetic", "feature_description.md")
+    synth_dir = os.path.join(base_dir, "data", "dataset_1_initial", "synthetic")
+    csv_path = os.path.join(synth_dir, "dataset.csv")
+    meta_path = os.path.join(synth_dir, "metadata.json")
+    report_path = os.path.join(synth_dir, "data_quality_report.md")
+    config_path = os.path.join(synth_dir, "generation_config.json")
+    feature_desc_path = os.path.join(synth_dir, "feature_description.md")
     
     assert os.path.exists(csv_path), "dataset.csv missing!"
     assert os.path.exists(meta_path), "metadata.json missing!"
